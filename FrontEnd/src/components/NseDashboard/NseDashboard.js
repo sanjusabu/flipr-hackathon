@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./NseDashboard.css";
 import LinearProgress from "@mui/material/LinearProgress";
-import Tst from "../../Chart/Tst";
+import Tstnes from "../../Chart/Tstnes";
 import { useRequest } from "../../hooks/request-hook";
 import Navbar from "../Home/Navbar";
 import { Link } from "react-router-dom";
+import Footer from '../Home/Footer'
 
 const NseDashboard = () => {
   const { sendRequest } = useRequest();
@@ -130,7 +131,7 @@ const NseDashboard = () => {
                   })}
                 </select>
                 {ret > 0 ? (
-                  <p className="percentttt">{ret}</p>
+                  <p className="percentttt">{ret}%</p>
                 ) : (
                   <p
                     style={{
@@ -155,7 +156,7 @@ const NseDashboard = () => {
           </div>
           <div className="bottttt mb-5">
             {ischart ? (
-              <Tst />
+              <Tstnes />
             ) : (
               <div className="overviewvalues">
                 <div className="firstrowww">
@@ -193,6 +194,7 @@ const NseDashboard = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
