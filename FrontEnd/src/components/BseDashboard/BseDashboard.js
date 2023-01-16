@@ -90,8 +90,8 @@ const BseDashboard = () => {
                 <div className="secondvalue">60,586.77</div>
               </div>
               <div className="valuesssss">
-                <div className="firstvalue1">L</div>
-                <div className="secondvalue1">H</div>
+                <div className="firstvalue1">O</div>
+                <div className="secondvalue1">C</div>
               </div>
               <LinearProgress
                 color="inherit"
@@ -104,8 +104,8 @@ const BseDashboard = () => {
                 <div className="secondvalue">63,583.07</div>
               </div>
               <div className="valuesssss">
-                <div className="firstvalue1">L</div>
-                <div className="secondvalue1">H</div>
+                <div className="firstvalue1">O</div>
+                <div className="secondvalue1">C</div>
               </div>
               <LinearProgress
                 color="inherit"
