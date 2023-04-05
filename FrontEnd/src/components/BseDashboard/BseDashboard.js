@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./BseDashboard.css";
 import LinearProgress from "@mui/material/LinearProgress";
-import Tst from "../../Chart/Tst";
+// import Tst from "../../Chart/Tst";
 import { useRequest } from "../../hooks/request-hook";
 import Navbar from "../Home/Navbar";
 import { Link } from "react-router-dom";
+import Tstbes from "../../Chart/Testbes";
+import Footer from '../Home/Footer'
 
 const BseDashboard = () => {
   const { sendRequest } = useRequest();
@@ -46,7 +48,7 @@ const BseDashboard = () => {
           { "Content-Type": "application/json" }
         );
         console.log(response);
-        setRet(response.returns.toFixed(4));
+        setRet(response[0].returns.toFixed(4));
       };
       getcomp();
     }
@@ -90,8 +92,8 @@ const BseDashboard = () => {
                 <div className="secondvalue">60,586.77</div>
               </div>
               <div className="valuesssss">
-                <div className="firstvalue1">L</div>
-                <div className="secondvalue1">H</div>
+                <div className="firstvalue1">O</div>
+                <div className="secondvalue1">C</div>
               </div>
               <LinearProgress
                 color="inherit"
@@ -104,8 +106,8 @@ const BseDashboard = () => {
                 <div className="secondvalue">63,583.07</div>
               </div>
               <div className="valuesssss">
-                <div className="firstvalue1">L</div>
-                <div className="secondvalue1">H</div>
+                <div className="firstvalue1">O</div>
+                <div className="secondvalue1">C</div>
               </div>
               <LinearProgress
                 color="inherit"
@@ -155,7 +157,7 @@ const BseDashboard = () => {
           </div>
           <div className="bottttt mb-5">
             {ischart ? (
-              <Tst />
+              <Tstbes />
             ) : (
               <div className="overviewvalues">
                 <div className="firstrowww">
@@ -193,6 +195,7 @@ const BseDashboard = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

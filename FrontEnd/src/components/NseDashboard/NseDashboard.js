@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./NseDashboard.css";
 import LinearProgress from "@mui/material/LinearProgress";
-import Tst from "../../Chart/Tst";
+import Tstnes from "../../Chart/Tstnes";
 import { useRequest } from "../../hooks/request-hook";
 import Navbar from "../Home/Navbar";
 import { Link } from "react-router-dom";
+import Footer from "../Home/Footer";
 
 const NseDashboard = () => {
   const { sendRequest } = useRequest();
@@ -46,7 +47,7 @@ const NseDashboard = () => {
           { "Content-Type": "application/json" }
         );
         console.log(response);
-        setRet(response.returns.toFixed(4));
+        setRet(response[0].returns.toFixed(4));
       };
       const getgraph = async () => {
         const response = await sendRequest(
@@ -102,8 +103,8 @@ const NseDashboard = () => {
                 <div className="secondvalue">18,049.65</div>
               </div>
               <div className="valuesssss">
-                <div className="firstvalue1">L</div>
-                <div className="secondvalue1">H</div>
+                <div className="firstvalue1">O</div>
+                <div className="secondvalue1">C</div>
               </div>
               <LinearProgress
                 color="inherit"
@@ -116,8 +117,8 @@ const NseDashboard = () => {
                 <div className="secondvalue">18,887.60</div>
               </div>
               <div className="valuesssss">
-                <div className="firstvalue1">L</div>
-                <div className="secondvalue1">H</div>
+                <div className="firstvalue1">O</div>
+                <div className="secondvalue1">C</div>
               </div>
               <LinearProgress
                 color="inherit"
@@ -142,7 +143,7 @@ const NseDashboard = () => {
                   })}
                 </select>
                 {ret > 0 ? (
-                  <p className="percentttt">{ret}</p>
+                  <p className="percentttt">{ret}%</p>
                 ) : (
                   <p
                     style={{
@@ -167,7 +168,7 @@ const NseDashboard = () => {
           </div>
           <div className="bottttt mb-5">
             {ischart ? (
-              <p>hello</p>
+              <Tstnes />
             ) : (
               <div className="overviewvalues">
                 <div className="firstrowww">
@@ -205,6 +206,7 @@ const NseDashboard = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
