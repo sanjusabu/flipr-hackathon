@@ -6,7 +6,7 @@ import { useRequest } from "../../hooks/request-hook";
 import Navbar from "../Home/Navbar";
 import { Link } from "react-router-dom";
 import Tstbes from "../../Chart/Testbes";
-import Footer from '../Home/Footer'
+import Footer from "../Home/Footer";
 
 const BseDashboard = () => {
   const { sendRequest } = useRequest();
@@ -48,7 +48,8 @@ const BseDashboard = () => {
           { "Content-Type": "application/json" }
         );
         console.log(response);
-        setRet(response[0].returns.toFixed(4));
+        console.log(response[0].returns);
+        setRet(response[0].returns);
       };
       getcomp();
     }

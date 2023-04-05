@@ -47,7 +47,7 @@ const NseDashboard = () => {
           { "Content-Type": "application/json" }
         );
         console.log(response);
-        setRet(response[0].returns.toFixed(4));
+        setRet(response[0].returns);
       };
       const getgraph = async () => {
         const response = await sendRequest(
@@ -59,6 +59,7 @@ const NseDashboard = () => {
           { "Content-Type": "application/json" }
         );
         console.log(response);
+        // console.log(response)
       };
       getcomp();
       getgraph();
@@ -142,6 +143,7 @@ const NseDashboard = () => {
                     );
                   })}
                 </select>
+                {console.log(ret)}
                 {ret > 0 ? (
                   <p className="percentttt">{ret}%</p>
                 ) : (
