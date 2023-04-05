@@ -48,10 +48,22 @@ const NseDashboard = () => {
         console.log(response);
         setRet(response.returns.toFixed(4));
       };
+      const getgraph = async () => {
+        const response = await sendRequest(
+          "https://flipr-dzx0.onrender.com/companies/returns",
+          "POST",
+          JSON.stringify({
+            comp: comp,
+          }),
+          { "Content-Type": "application/json" }
+        );
+        console.log(response);
+      };
       getcomp();
+      getgraph();
     }
     console.log(time);
-  }, [comp, time]);
+  }, [comp, time, ischart]);
 
   return (
     <>
@@ -155,7 +167,7 @@ const NseDashboard = () => {
           </div>
           <div className="bottttt mb-5">
             {ischart ? (
-              <Tst />
+              <p>hello</p>
             ) : (
               <div className="overviewvalues">
                 <div className="firstrowww">
