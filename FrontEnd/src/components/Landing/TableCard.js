@@ -11,7 +11,7 @@ import Companydata from "../Companydata/Companydata";
 
 const start = new Date("2023-01-01");
 const end = new Date("2023-01-12");
-
+const { allowedRange } = DateRangePicker;
 const TableCard = () => {
   const [value, setValue] = useState([start, end]);
   const [tables, setTable] = useState([]);
@@ -123,6 +123,7 @@ const TableCard = () => {
             placeholder="Select Date Range"
             value={value}
             onChange={valueChangeHandler}
+            disabledDate={allowedRange("2018-01-15", "2023-01-12")}
           />
           {/* <select name="type" value={comp} onChange={changeHandler}>
             <option>Select Companies</option>
